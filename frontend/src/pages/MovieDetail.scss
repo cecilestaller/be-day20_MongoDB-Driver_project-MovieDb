@@ -1,0 +1,75 @@
+main {
+  .detail_wrap {
+    padding: 5%;
+    padding-bottom: 100vh;
+    text-align: left;
+
+    h3 {
+      font-family: "poppB";
+      color: var(--headlineRed);
+      font-size: 1.75rem;
+    }
+    .yearAndDir {
+      font-family: "poppT";
+      color: white;
+      font-size: 1.25rem;
+      margin-bottom: 2vh;
+    }
+    button {
+      padding: 4px 8px;
+      border-radius: 24px;
+      border: 1px solid var(--addButton);
+      background-color: var(--bg);
+      color: var(--addButton);
+      font-family: "poppB";
+      margin-bottom: 2vh;
+      margin-right: 4px;
+      &:hover {
+        cursor: pointer;
+        background-color: var(--addButton);
+        color: white;
+      }
+    }
+
+    .outer_flex_wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      .left {
+        .img_wrapper {
+          width: 100%;
+          img {
+            width: 100%;
+          }
+        }
+        .rateAndDur {
+          display: flex;
+          gap: 16px;
+          margin-top: 1vh;
+          font-family: "poppReg";
+          color: white;
+        }
+      }
+
+      .right {
+        div {
+          display: flex;
+          gap: 12px;
+          margin-bottom: 2vh;
+          p {
+            color: white;
+            border-radius: 16px;
+            padding: 6px;
+            background-color: var(--textGreen);
+            font-family: "poppReg";
+            font-size: 0.75rem;
+          }
+        }
+        .plot {
+          font-family: "poppReg";
+          color: white;
+        }
+      }
+    }
+  }
+}

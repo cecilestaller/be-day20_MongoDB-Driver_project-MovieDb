@@ -1,0 +1,18 @@
+main {
+  text-align: left;
+  padding: 3%;
+  padding-bottom: 100vh;
+
+  .hl_red {
+    font-family: "poppB";
+    color: var(--headlineRed);
+    font-size: 1.5rem;
+    margin-bottom: 2vh;
+  }
+  .favoritesList_wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    justify-items: center;
+  }
+}

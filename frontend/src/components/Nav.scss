@@ -1,0 +1,28 @@
+header {
+  background-color: var(--bg);
+  color: var(--textGreen);
+  padding-block: 2%;
+
+  nav {
+    height: 5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    a {
+      h1 {
+        font-family: "poppB";
+        font-size: 2rem;
+      }
+      p {
+        font-family: "poppReg";
+        font-size: 1.25rem;
+      }
+      &:hover {
+        color: var(--addButton);
+      }
+    }
+    .active {
+      color: var(--addButton);
+    }
+  }
+}
