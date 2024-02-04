@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { backendUrl } from "../api";
 import popcorn from "../assets/popcorn.jpg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./MovieCard.scss";
 
 const MovieCard = ({ movie }) => {
@@ -34,19 +33,18 @@ const MovieCard = ({ movie }) => {
   }
 
   return (
-    <article
-      className="movieCard_wrap"
-      onClick={() => navigate(`/movie/${movie._id}`)}
-    >
-      <img
-        src={posterURL || defaultPoster}
-        alt={movie.title}
-        onLoad={handleImageLoaded}
-        onError={handleImageError}
-      />
-      <h3 className="mC_title">{movie.title}</h3>
-      <p className="mC_director">{movie.director}</p>
-    </article>
+    <Link to={`/movie/${movie._id}`}>
+      <article className="movieCard_wrap">
+        <img
+          src={posterURL || defaultPoster}
+          alt={movie.title}
+          onLoad={handleImageLoaded}
+          onError={handleImageError}
+        />
+        <h3 className="mC_title">{movie.title}</h3>
+        <p className="mC_director">{movie.director}</p>
+      </article>
+    </Link>
   );
 };
 

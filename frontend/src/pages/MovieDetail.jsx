@@ -20,14 +20,10 @@ const MovieDetail = () => {
     fetch(`${backendUrl}/api/movies/${movieId}`)
       .then((res) => res.json())
       .then(({ success, result, error, message }) => {
-        if (success) {
-          setMovie(result);
-          // if (isFavMovie) setIsFavorite(true);
-        } else {
-          console.log("BE-Error: ", error);
-          setErrMessage(message || "Problem loading the movie...");
-        }
-      });
+        if (!success) setErrMessage(message || "Problem loading the movie...");
+        setMovie(result);
+      })
+      .catch((error) => console.log(error));
   }, []);
 
   // console.log(movie);
@@ -62,7 +58,7 @@ const MovieDetail = () => {
       })
       .catch((error) => console.log(error));
   }
-  console.log(movieId + "is favorite: " + isFavorite);
+  // console.log(movieId + "is favorite: " + isFavorite);
 
   // REMOVE Movie from Favorites function /w DELETE fetch
   function removeFromFavorites() {
